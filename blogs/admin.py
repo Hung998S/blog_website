@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('id','title', 'category','author','blog_image','status', 'is_feacherd','created_at','updated_at')
     prepopulated_fields = {'slug':('title',)}   # prepopulated_fields: Tự động điền trường 'slug' dựa theo nội dung của 'title'
-    search_fields = ('id', 'title', 'category', 'status')
+    search_fields = ('id', 'title', 'category__category_name', 'status')
     list_editable = ('is_feacherd',)
 
 # Đăng ký model Category với giao diện quản trị, sử dụng class CategoryAdmin để tùy chỉnh
