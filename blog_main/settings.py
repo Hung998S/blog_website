@@ -123,3 +123,14 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#-----------------------------------------
+# Cấu hình đường dẫn cho các tệp phương tiện (media files)
+
+# MEDIA_URL là URL được sử dụng để truy cập các tệp phương tiện từ trình duyệt.
+# Ví dụ: nếu bạn tải lên một ảnh có đường dẫn là /media/anh.jpg, thì trình duyệt có thể truy cập tại http://localhost:8000/media/anh.jpg
+MEDIA_URL = '/media/'
+
+# MEDIA_ROOT là đường dẫn thực tế trên hệ thống tập tin (filesystem) mà Django sẽ lưu các tệp phương tiện do người dùng tải lên.
+# Ở đây, MEDIA_ROOT được thiết lập là thư mục 'media' nằm trong thư mục gốc của dự án (BASE_DIR).
+MEDIA_ROOT = BASE_DIR / 'media'
