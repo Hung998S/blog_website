@@ -35,7 +35,7 @@
 
 {% for post in featured_post %}  
   {% if forloop.first %}
-<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url({{ post.blog_image.url }});background-blend-mode: overlay;background-size:cover;">
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('{{ post.blog_image.url }}');background-blend-mode: overlay;background-size:cover;">
     <div class="col-md-8 px-0">
       <h1 class="display-4 font-italic">{{ post.title }}</h1>
       <p class="lead my-3">{{ post.short_description }}</p>
@@ -102,7 +102,7 @@
 
 </div>
 <footer class="blog-footer">
-  <p>Django blog built with � by <a href="#">Deepak Kumar</a></p>
+  <p>Django blog </p>
 </footer>
 </body>
 </html>
