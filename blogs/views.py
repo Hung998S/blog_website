@@ -21,5 +21,7 @@ def posts_by_category(request, category_id):
     }
     return render(request, 'posts_by_category.html', context)
 
-# Create your views here.
+# blogs
+def blogs(request, slug):
+    return render(request, 'blogs.html')
  
