@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogs',
+    'crispy_forms',
+    'crispy_bootstrap4'
+    
 ]
 
 MIDDLEWARE = [
@@ -135,3 +138,6 @@ MEDIA_URL = '/media/'
 # MEDIA_ROOT là đường dẫn thực tế trên hệ thống tập tin (filesystem) mà Django sẽ lưu các tệp phương tiện do người dùng tải lên.
 # Ở đây, MEDIA_ROOT được thiết lập là thư mục 'media' nằm trong thư mục gốc của dự án (BASE_DIR).
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
