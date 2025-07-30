@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from . models import Blogs, Category
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 
 def posts_by_category(request, category_id):
     # Fetch the posts that belongs to the category with id category_id
@@ -29,3 +30,12 @@ def blogs(request, slug):
     }
     return render(request, 'blogs.html', context)
  
+# search Functionality
+def search(request):
+    keyword = request.GET.get('keyword')
+    blogs = Blogs.objects.filter(Q(title__icontains = keyword) | Q(short_description__icontains=keyword) | Q(blog_body__icontains=keyword), status='published' )
+    content = {
+        'blogs': blogs,
+        'keyword': keyword
+    }
+    return render(request, 'search.html', content)
