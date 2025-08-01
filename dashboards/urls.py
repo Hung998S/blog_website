@@ -11,6 +11,7 @@ urlpatterns = [
     path('categories/delete/<int:pk>', views.delete_categories, name= 'delete_categories'),
     
     # paths for posts
-    path('posts/', views.posts, name="posts")
+    path('posts/', views.posts, name="posts"),
+    path('posts/add/', views.add_posts, name="add_posts"),
 
 ]
