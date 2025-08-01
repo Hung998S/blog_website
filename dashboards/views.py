@@ -96,3 +96,8 @@ def edit_posts(request,pk):
         'post':post
     }
     return render(request,'dashboard/edit_post.html', context)
+
+def delete_posts(request,pk):
+    post = get_object_or_404(Blogs, pk=pk)
+    post.delete()
+    return redirect('posts')
