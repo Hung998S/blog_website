@@ -13,5 +13,6 @@ urlpatterns = [
     # paths for posts
     path('posts/', views.posts, name="posts"),
     path('posts/add/', views.add_posts, name="add_posts"),
+    path('posts/edit/<int:pk>/', views.edit_posts, name="edit_posts"),
 
 ]
