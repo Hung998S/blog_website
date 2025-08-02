@@ -19,5 +19,6 @@ urlpatterns = [
     # paths for users
     path('user/',views.users, name="users" ),
     path('user/add/',views.add_users, name="add_users" ),
+    path('users/edit/<int:pk>/', views.edit_user, name="edit_user")
 
 ]
