@@ -5,6 +5,7 @@ from . forms import CategoryForm, BlogPostForm
 from django.shortcuts import get_object_or_404
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from .forms import AddUserForm
 
 # Create your views here.
 @login_required(login_url='login')
@@ -112,3 +113,16 @@ def users(request):
         'users': users
     }
     return render(request, 'dashboard/users.html', context)
+
+def add_users(request):
+    if request.method == "POST":
+        form = AddUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('users')
+    
+    form = AddUserForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'dashboard/add_users.html', context)
