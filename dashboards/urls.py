@@ -17,8 +17,8 @@ urlpatterns = [
     path('posts/delete/<int:pk>/', views.delete_posts, name="delete_posts"),
     
     # paths for users
-    path('user/',views.users, name="users" ),
-    path('user/add/',views.add_users, name="add_users" ),
-    path('users/edit/<int:pk>/', views.edit_user, name="edit_user")
-
+    path('users/',views.users, name="users" ),
+    path('users/add/',views.add_users, name="add_users" ),
+    path('users/edit/<int:pk>/', views.edit_user, name="edit_user"),
+    path('users/delete/<int:pk>/', views.delete_user, name='delete_user')
 ]
